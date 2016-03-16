@@ -1,12 +1,11 @@
 #!/usr/bin/python
 
 ###############################################################
-# Telegraf and kapacitor must be started only after InfluxDb 
-# starts listening on the HTTP port. This listeners listens 
-# for events and starts the telegraf group at appropriate time
+# Telegraf and Kapacitor must be started only after InfluxDB 
+# starts listening on the HTTP port. 
 #
 # This is a listener, which listens for PROCESS_LOG events
-# based on communication via a subprocess stdin and 
+# based on communication via a subprocess stdin and stdout.
 # @see http://supervisord.org/events.html
 ###############################################################
 

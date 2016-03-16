@@ -4,10 +4,10 @@
 # This is a runner which starts supervisord. Supervisord picks 
 # it's config from /etc/supervisor/conf.d/ 
 #
-# Once the listener exits, the process group influxdb still keeps on
+# Even after the listener exits, the process group influxdb keeps on
 # generating log events as stdout_events_enabled is set to true. 
-# So once telegraf starts the subcribers need to be cleared. 
-# Prcess group influxdblistener is the only one subscriber, hence 
+# So once telegraf starts, the subcribers need to be cleared. 
+# Process group influxdblistener is the only subscriber, hence 
 # it is safe to clear the callbacks.
 #
 # @see events.py https://github.com/Supervisor/supervisor 
