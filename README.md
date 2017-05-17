@@ -9,7 +9,7 @@ To know more about the individual components see [this](https://influxdata.com/)
 Start all the images as follows:
 
     # cd to desired version
-    cd 1.0/
+    cd 1.2/
     # Start all images in the background
     docker-compose up -d
 
@@ -36,16 +36,7 @@ Check that InfluxDB has such a database in addition to the `_internal` database.
 
 ### Check that Chronograf works
 
-Access the Chronograf inteface, [http://localhost:10000](http://localhost:10000)
-
-You will need to add the InfluxDB server.
-Use these settings:
-
-Host: influxdb
-Port: 8086
-
-No auth or SSL.
-
+Access the Chronograf inteface, [http://localhost:8888](http://localhost:8888)
 
 ### Check Kapacitor works
 
