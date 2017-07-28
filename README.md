@@ -4,6 +4,8 @@ Run the complete TICK stack using this [docker-compose](https://docs.docker.com/
 By using docker-compose all four official TICK stack images are started and linked together.
 To know more about the individual components see [this](https://influxdata.com/)
 
+There is also [this community Docker Swarm Compose file](https://gist.github.com/cdelaitre/85949d8b697359a319e30a678e23d8bd) as well.
+
 ## Usage
 
 Start all the images as follows:
