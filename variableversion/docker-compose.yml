@@ -4,6 +4,7 @@ services:
   # Define a Telegraf service
   telegraf:
     image: telegraf:1.8.0
+    container_name: telegraf
     volumes:
       - ./etc/telegraf.conf:/etc/telegraf/telegraf.conf:ro
     links:
@@ -15,6 +16,7 @@ services:
   # Define an InfluxDB service
   influxdb:
     image: influxdb:1.7.1
+    container_name: influxdb
     volumes:
       - ./data/influxdb:/var/lib/influxdb
     ports:
@@ -22,6 +24,7 @@ services:
   # Define a Chronograf service
   chronograf:
     image: chronograf:1.7.3
+    container_name: chronograf
     environment:
       INFLUXDB_URL: http://influxdb:8086
       KAPACITOR_URL: http://kapacitor:9092
@@ -33,6 +36,7 @@ services:
   # Define a Kapacitor service
   kapacitor:
     image: kapacitor:1.5.1
+    container_name: kapacitor
     environment:
       KAPACITOR_HOSTNAME: kapacitor
       KAPACITOR_INFLUXDB_0_URLS_0: http://influxdb:8086
@@ -44,6 +48,7 @@ services:
   # docker-compose run influxdb-cli
   influxdb-cli:
     image: influxdb:1.7.1
+    container_name: influxdb_cli
     entrypoint:
       - influx
       - -host
@@ -54,6 +59,7 @@ services:
   # docker-compose run kapacitor-cli
   kapacitor-cli:
     image: kapacitor:1.3.3
+    container_name: kapacitor_cli
     entrypoint: bash
     environment:
       KAPACITOR_URL: http://kapacitor:9092
